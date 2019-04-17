@@ -46,7 +46,7 @@ for line in lines:
     qas={}
     qas["answers"]=[{"answer_start":answer_start,"text":Answer}]
     qas["question"]=question_id
-    qas["id"]=nums
+    qas["id"]=str(nums)
     paragraphs["qas"]=[qas]
 
 
