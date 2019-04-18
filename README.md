@@ -8,6 +8,45 @@ In this project, you are given the answers to 19 different queries of 2k+ abstra
 Since SQuAD is familiar with the given dataset. Here is my first attempt 
 - [x] csv format -> json format
 - [ ] use [QA-Net](https://github.com/NLPLearn/QANet)/[BERT](https://github.com/google-research/bert) to train SQuAD
-- [ ] use [QA-Net](https://github.com/NLPLearn/QANet)/[BERT](https://github.com/google-research/bert) to train my data
-- [ ] compare with two choices
+- [x] use [BERT](https://github.com/google-research/bert) to train my data
+- [x] compare with two choices
 
+### USAGE
+ Put train.csv, test.csv, train_csv2json.py under same folder.    
+     
+     
+    python train_csv2json.py    
+    
+    
+ Download BERT    
+    
+    git clone https://github.com/google-research/bert.git
+    
+ RUN    
+    
+    #PBS -l walltime=24:00:00
+    
+    source activate my_env
+    cd /path/to/bert/
+
+    export BERT_BASE_DIR=/path/to/bert/uncased_L-12_H-768_A-12
+    export GLUE_DIR=/path/to/bert/glue_data
+    export BERT_DIR=/path/to/bert/bert/
+    export SQUAD_DIR=/path/to/squad/datasets
+
+    python run_squad.py \
+      --vocab_file=$BERT_BASE_DIR/vocab.txt \
+      --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+      --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+      --do_train=True \
+      --train_file=$SQUAD_DIR/train-v1.1.json \
+      --do_predict=True \
+      --predict_file=$SQUAD_DIR/dev-v1.1.json \
+      --train_batch_size=12 \
+      --learning_rate=3e-5 \
+      --num_train_epochs=2.0 \
+      --max_seq_length=384 \
+      --doc_stride=128 \
+      --output_dir=$BERT_DIR/tmp/squad_base/
+    
+**Note:Top 3 lines are for qsub**
