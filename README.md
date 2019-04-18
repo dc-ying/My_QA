@@ -50,3 +50,10 @@ Since SQuAD is familiar with the given dataset. Here is my first attempt
       --output_dir=$BERT_DIR/tmp/squad_base/
     
 **Note:Top 3 lines are for qsub**
+
+### Results
+
+    {'same0': 608, 'same': 105}
+    {"exact_match": 23.25959001420743, "f1": 53.63440247072295}
+
+Best public leaderboard: 0.78287
