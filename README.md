@@ -7,7 +7,7 @@ In this project, you are given the answers to 19 different queries of 2k+ abstra
 ## First Attempt
 Since SQuAD is familiar with the given dataset. Here is my first attempt 
 - [x] csv format -> json format
-- [ ] use [QA-Net](https://github.com/NLPLearn/QANet)/[BERT](https://github.com/google-research/bert) to train SQuAD
+- [ ] use [QA-Net](https://github.com/NLPLearn/QANet)/[BERT](https://github.com/google-research/bert) to train [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/)
 - [x] use [BERT](https://github.com/google-research/bert) to train my data
 - [x] compare with two choices
 
