@@ -52,8 +52,23 @@ Since SQuAD is familiar with the given dataset. Here is my first attempt
 **Note:Top 3 lines are for qsub**
 
 ### Results
-
+BERT
+*1909-model: 
+    
+    
     {'same0': 608, 'same': 105}
     {"exact_match": 23.25959001420743, "f1": 53.63440247072295}
 
 Best public leaderboard: 0.78287
+
+*9545-model: 
+
+    {'same0': 770, 'same': 99}
+    {"exact_match": 19.545362289425615, "f1": 49.02585400151344}
+    
+QANet
+*test:
+
+    
+
+
